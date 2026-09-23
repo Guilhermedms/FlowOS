@@ -9,7 +9,7 @@ da assinatura do Claude.
 Abra o PowerShell (Menu Iniciar → "PowerShell") e cole:
 
 ```powershell
-irm https://raw.githubusercontent.com/Guilhermedms/flowos/main/instalador/instalar.ps1 | iex
+irm https://raw.githubusercontent.com/Guilhermedms/FlowOS/main/instalador/instalar.ps1 | iex
 ```
 
 O instalador prepara Git, VS Code, Claude Code, cria a pasta do negócio, instala o FlowOS e liga

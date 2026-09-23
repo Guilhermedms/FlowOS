@@ -1,14 +1,14 @@
 # FlowOS — instalador para Windows
 #
 # Cole no PowerShell (Menu Iniciar → digite "PowerShell" → Enter):
-#   irm https://raw.githubusercontent.com/Guilhermedms/flowos/main/instalador/instalar.ps1 | iex
+#   irm https://raw.githubusercontent.com/Guilhermedms/FlowOS/main/instalador/instalar.ps1 | iex
 #
 # O que ele faz (pula o que já existir):
 #   1. Git  2. VS Code  3. Claude Code  4. extensão do Claude no VS Code
 #   5. pasta do negócio  6. plugin FlowOS  7. atualização automática  → abre o VS Code
 
 $ErrorActionPreference = 'Stop'
-$Marketplace = 'Guilhermedms/flowos'   # <- repositório do FlowOS no GitHub
+$Marketplace = 'Guilhermedms/FlowOS'   # <- repositório do FlowOS no GitHub
 $NomeMarketplace = 'flowos'
 $Plugin = 'flowos@flowos'
 
