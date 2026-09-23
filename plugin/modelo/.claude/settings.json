@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(flowos-retorno:*)",
+      "PowerShell(flowos-retorno:*)",
+      "Read(./**)",
+      "Edit(./memoria/**)",
+      "Edit(./marca/**)",
+      "Edit(./clientes/**)",
+      "Edit(./sites/**)",
+      "Edit(./conteudo/**)",
+      "Edit(./saidas/**)",
+      "Edit(./sistema/retorno.json)",
+      "Edit(./sistema/fila-hoje.json)",
+      "Edit(./CLAUDE.md)"
+    ],
+    "deny": [
+      "Read(./sistema/segredos/**)",
+      "Edit(./sistema/segredos/**)"
+    ]
+  }
+}

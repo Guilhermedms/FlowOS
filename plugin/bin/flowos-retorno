@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Atalho do motor de retorno do FlowOS (Git Bash). Uso: flowos-retorno <ação> [parâmetros]
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT="$DIR/../scripts/retorno.ps1"
+command -v cygpath >/dev/null 2>&1 && SCRIPT="$(cygpath -w "$SCRIPT")"
+ACAO="${1:-verificar}"; shift || true
+exec powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$SCRIPT" -Acao "$ACAO" "$@"

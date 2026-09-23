@@ -1,0 +1,77 @@
+{
+  "ativo": true,
+  "empresa": {
+    "nome": "Barbearia do Zé",
+    "aniversario": "10/03"
+  },
+  "canais": {
+    "whatsapp": true,
+    "email": true,
+    "preferencia": "whatsapp"
+  },
+  "intervalo_minimo_dias": 15,
+  "limite_diario": 30,
+  "rodape_email": "Se não quiser mais receber nossas mensagens, é só responder SAIR.",
+  "regras": [
+    {
+      "id": "sumido-30",
+      "nome": "Cliente sumido (30 dias)",
+      "tipo": "inatividade",
+      "dias": 30,
+      "assunto": "Tá na hora de dar aquele trato, {primeiro_nome}",
+      "mensagem": "Fala, {primeiro_nome}! Já faz {dias} dias do seu último {ultimo_servico} aqui na {empresa}. Bora marcar? É só responder essa mensagem."
+    },
+    {
+      "id": "sumido-60",
+      "nome": "Cliente sumido (60 dias)",
+      "tipo": "inatividade",
+      "dias": 60,
+      "assunto": "Sentimos sua falta, {primeiro_nome}",
+      "mensagem": "{primeiro_nome}, sentimos sua falta por aqui! Pra você voltar, separei 10% de desconto no próximo {ultimo_servico}. Vale até o fim do mês."
+    },
+    {
+      "id": "sumido-90",
+      "nome": "Cliente sumido (90 dias)",
+      "tipo": "inatividade",
+      "dias": 90,
+      "assunto": "Um presente pra você voltar",
+      "mensagem": "Oi, {primeiro_nome}! Faz um tempão que você não aparece. Seu próximo corte sai com 20% de desconto — é só mostrar essa mensagem. Esperamos você!"
+    },
+    {
+      "id": "aniversario-cliente",
+      "nome": "Aniversário do cliente",
+      "tipo": "aniversario_cliente",
+      "antecedencia_dias": 0,
+      "tolerancia_dias": 3,
+      "assunto": "Feliz aniversário, {primeiro_nome}! 🎉",
+      "mensagem": "Parabéns, {primeiro_nome}! 🎉 A {empresa} te deseja um ano incrível. De presente, seu corte deste mês sai com 15% de desconto."
+    },
+    {
+      "id": "aniversario-empresa",
+      "nome": "Aniversário da empresa",
+      "tipo": "aniversario_empresa",
+      "antecedencia_dias": 2,
+      "assunto": "A {empresa} está fazendo aniversário!",
+      "mensagem": "{primeiro_nome}, dia {data} a {empresa} faz aniversário e quem ganha presente é você: 15% em qualquer serviço até o fim da semana."
+    },
+    {
+      "id": "dia-dos-pais",
+      "nome": "Dia dos Pais",
+      "tipo": "data",
+      "data": "dia-dos-pais",
+      "antecedencia_dias": 5,
+      "publico": { "tags": ["pai"] },
+      "assunto": "Dia dos Pais na {empresa}",
+      "mensagem": "{primeiro_nome}, domingo ({data}) é Dia dos Pais! Que tal vir com seu filho? O corte da criança sai pela metade do preço essa semana."
+    },
+    {
+      "id": "dia-do-cliente",
+      "nome": "Dia do Cliente",
+      "tipo": "data",
+      "data": "dia-do-cliente",
+      "antecedencia_dias": 3,
+      "assunto": "Obrigado por ser nosso cliente",
+      "mensagem": "{primeiro_nome}, dia {data} é Dia do Cliente e a gente quer agradecer: essa semana tem barba grátis em qualquer corte."
+    }
+  ]
+}

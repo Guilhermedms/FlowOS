@@ -1,0 +1,9 @@
+{
+  "ativo": false,
+  "empresa": { "nome": "", "aniversario": "" },
+  "canais": { "whatsapp": true, "email": false, "preferencia": "whatsapp" },
+  "intervalo_minimo_dias": 15,
+  "limite_diario": 30,
+  "rodape_email": "Se não quiser mais receber nossas mensagens, é só responder SAIR.",
+  "regras": []
+}

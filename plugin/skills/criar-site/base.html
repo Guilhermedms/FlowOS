@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[NOME DO NEGÓCIO] — [promessa curta]</title>
+<meta name="description" content="[Uma frase concreta sobre o que o negócio faz e onde.]">
+<meta property="og:title" content="[NOME DO NEGÓCIO]">
+<meta property="og:description" content="[Mesma frase da descrição]">
+<meta property="og:image" content="imagens/compartilhar.jpg">
+<link rel="icon" href="imagens/favicon.png">
+<!-- Fontes: trocar pelo par escolhido na direção visual -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=Familjen+Grotesk:wght@400..700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js")</script>
+<style>
+:root {
+  /* Trocar pelos tokens de marca/guia-de-marca.md */
+  --fundo: #f2ede4;
+  --texto: #1d1a16;
+  --suave: #6d655a;
+  --destaque: #b4532a;
+  --linha: color-mix(in srgb, var(--texto) 15%, transparent);
+  --titulo: "Fraunces", Georgia, serif;
+  --corpo: "Familjen Grotesk", system-ui, sans-serif;
+  --margem: clamp(16px, 4vw, 56px);
+  --max: 1360px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--fundo); color: var(--texto); font: 400 clamp(16px, 1.1vw, 18px)/1.55 var(--corpo);
+       -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; display: block; }
+a { color: inherit; }
+
+@media (prefers-reduced-motion: no-preference) { .js [data-split] { visibility: hidden; } }
+
+/* ---------- topo (fica FORA do smooth-wrapper) */
+.topo { position: fixed; inset: 0 0 auto; z-index: 50; display: flex; align-items: center;
+        justify-content: space-between; padding: 18px var(--margem); color: #fff; mix-blend-mode: difference; }
+.marca { font: 600 18px/1 var(--titulo); text-decoration: none; letter-spacing: -.01em; }
+.topo nav { display: flex; gap: clamp(14px, 2.4vw, 32px); font-size: 14px; }
+.topo nav a { text-decoration: none; }
+@media (max-width: 640px) { .topo nav a:not(.cta-topo) { display: none; } }
+
+/* ---------- hero em camadas */
+.hero { position: relative; height: 100svh; min-height: 560px; overflow: hidden; background: var(--texto); }
+.camadas { position: absolute; inset: 0; }
+.camada { position: absolute; left: 0; top: 0; width: 100%; height: 115%; object-fit: cover;
+          object-position: center bottom; pointer-events: none; }
+.hero-titulo { position: absolute; left: var(--margem); right: var(--margem); bottom: 22vh; margin: 0;
+               font: 400 clamp(3.2rem, 11vw, 10.5rem)/.9 var(--titulo); letter-spacing: -.035em; color: var(--fundo); }
+.hero-titulo em { font-style: italic; font-weight: 300; }
+.hero-rodape { position: absolute; z-index: 5; left: var(--margem); right: var(--margem); bottom: 28px;
+               display: flex; justify-content: space-between; align-items: end; gap: 24px; color: var(--fundo); font-size: 14px; }
+.hero-rodape p { max-width: 34ch; margin: 0; }
+@media (max-width: 640px) { .hero-rodape { flex-direction: column; align-items: flex-start; } .hero-titulo { bottom: 30vh; } }
+
+/* ---------- botões */
+.botao { display: inline-flex; align-items: center; gap: .6em; padding: 1em 1.6em; border-radius: 999px;
+         background: var(--destaque); color: #fff; text-decoration: none; font-weight: 600; white-space: nowrap; }
+.botao:hover { background: color-mix(in srgb, var(--destaque) 85%, #000); }
+
+/* ---------- seções */
+section.bloco { padding: clamp(80px, 14vh, 180px) var(--margem); max-width: var(--max); margin: 0 auto; }
+.rotulo { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--suave);
+          border-top: 1px solid var(--linha); padding-top: 14px; margin: 0 0 clamp(28px, 5vw, 64px); }
+.grade { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; }
+.sobre h2 { grid-column: 1 / span 8; margin: 0; font: 400 clamp(2rem, 5vw, 4.4rem)/1.02 var(--titulo); letter-spacing: -.025em; }
+.sobre p { grid-column: 8 / span 5; margin: clamp(24px, 4vw, 48px) 0 0; color: var(--suave); }
+@media (max-width: 800px) { .sobre h2, .sobre p { grid-column: 1 / -1; } }
+
+.final { text-align: left; }
+.final h2 { margin: 0 0 32px; font: 400 clamp(2.4rem, 7vw, 6.5rem)/.95 var(--titulo); letter-spacing: -.03em; max-width: 14ch; }
+footer { padding: 32px var(--margem); border-top: 1px solid var(--linha); color: var(--suave); font-size: 14px;
+         display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+</style>
+</head>
+<body>
+
+<header class="topo">
+  <a class="marca" href="#inicio">[Nome]</a>
+  <nav><a href="#sobre">Sobre</a><a href="#contato" class="cta-topo">Agendar</a></nav>
+</header>
+
+<div id="smooth-wrapper"><div id="smooth-content">
+
+  <section class="hero" id="inicio">
+    <div class="camadas">
+      <!-- img04 = fundo (mais lenta) … img01 = frente (velocidade normal). Frente em PNG sem fundo. -->
+      <img class="camada" src="imagens/img04.png" alt="" aria-hidden="true" data-speed="clamp(0.5)"  style="z-index:1">
+      <img class="camada" src="imagens/img03.png" alt="" aria-hidden="true" data-speed="clamp(0.65)" style="z-index:2">
+      <img class="camada" src="imagens/img02.png" alt="" aria-hidden="true" data-speed="clamp(0.8)"  style="z-index:3">
+      <h1 class="hero-titulo" data-split data-speed="clamp(0.72)" style="z-index:3">[Título que só<br><em>esse negócio</em> diria]</h1>
+      <img class="camada" src="imagens/img01.png" alt="" aria-hidden="true" data-speed="clamp(1)" style="z-index:4">
+    </div>
+    <div class="hero-rodape">
+      <p>[Uma frase concreta: o que faz, pra quem, onde.]</p>
+      <a class="botao magnetico" href="https://wa.me/55DDDNUMERO?text=Oi!%20Vim%20pelo%20site">[Chamar no WhatsApp]</a>
+    </div>
+  </section>
+
+  <section class="bloco sobre" id="sobre">
+    <p class="rotulo">01 — Sobre</p>
+    <div class="grade">
+      <h2 data-split="linhas">[Frase de posicionamento com um fato concreto — ano, número, lugar.]</h2>
+      <p data-split="linhas">[Parágrafo curto na voz do dono. Específico: o que acontece quando o cliente chega, o que ninguém mais faz.]</p>
+    </div>
+  </section>
+
+  <section class="bloco final" id="contato">
+    <p class="rotulo">02 — Contato</p>
+    <h2 data-split="linhas">[Chamada final direta]</h2>
+    <a class="botao magnetico" href="https://wa.me/55DDDNUMERO?text=Oi!%20Vim%20pelo%20site">[Chamar no WhatsApp]</a>
+  </section>
+
+  <footer><span>[Nome] · [Endereço]</span><span>[Instagram] · [Telefone]</span></footer>
+
+</div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+// ?print = modo de conferência (print headless desenha poucos quadros; sem isso as animações ficam paradas no início)
+const params = new URLSearchParams(location.search);
+if (params.has("print")) gsap.ticker.lagSmoothing(0);
+// ?estatico = página sem efeitos (pra conferir o layout inteiro num print só)
+if (params.has("estatico")) document.documentElement.classList.remove("js");
+const mm = gsap.matchMedia();
+
+mm.add(params.has("estatico") ? "(max-width: 0px)" : "(prefers-reduced-motion: no-preference)", () => {
+  const smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper", content: "#smooth-content",
+    smooth: 1.2, effects: true, smoothTouch: 0.1,
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const alvo = a.getAttribute("href");
+      if (alvo.length > 1 && document.querySelector(alvo)) { e.preventDefault(); smoother.scrollTo(alvo, true, "top 80px"); }
+    });
+  });
+
+  document.fonts.ready.then(() => {
+    // título do hero: linhas sobem por trás de uma máscara
+    SplitText.create(".hero-titulo", {
+      type: "lines", mask: "lines", autoSplit: true,
+      onSplit(self) {
+        gsap.set(self.elements, { autoAlpha: 1 });
+        return gsap.from(self.lines, { yPercent: 110, duration: 1.25, ease: "expo.out", stagger: 0.1, delay: 0.15 });
+      },
+    });
+    // textos das seções: linha a linha ao entrar na tela
+    gsap.utils.toArray("[data-split='linhas']").forEach((el) => {
+      SplitText.create(el, {
+        type: "lines", mask: "lines", autoSplit: true,
+        onSplit(self) {
+          gsap.set(el, { autoAlpha: 1 });
+          return gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: "power4.out", stagger: 0.08,
+                                         scrollTrigger: { trigger: el, start: "top 85%" } });
+        },
+      });
+    });
+  });
+
+  if (matchMedia("(pointer: fine)").matches) {
+    document.querySelectorAll(".magnetico").forEach((b) => {
+      const x = gsap.quickTo(b, "x", { duration: 0.5, ease: "power3" });
+      const y = gsap.quickTo(b, "y", { duration: 0.5, ease: "power3" });
+      b.addEventListener("mousemove", (e) => {
+        const r = b.getBoundingClientRect();
+        x((e.clientX - r.left - r.width / 2) * 0.3); y((e.clientY - r.top - r.height / 2) * 0.3);
+      });
+      b.addEventListener("mouseleave", () => { x(0); y(0); });
+    });
+  }
+});
+</script>
+</body>
+</html>

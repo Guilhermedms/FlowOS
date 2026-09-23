@@ -1,0 +1,12 @@
+{
+  "name": "flowos",
+  "owner": { "name": "Guilherme Decker" },
+  "description": "FlowOS — sistema operacional do pequeno negócio para Claude Code.",
+  "plugins": [
+    {
+      "name": "flowos",
+      "source": "./plugin",
+      "description": "Memória da empresa, retorno automático de clientes, sites sem cara de IA."
+    }
+  ]
+}

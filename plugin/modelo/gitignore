@@ -1,0 +1,19 @@
+# Segredos — nunca versionar
+sistema/segredos/
+.env
+
+# Dados pessoais de clientes (LGPD) — backup separado, não em repositório público
+clientes/*.csv
+!clientes/.gitkeep
+sistema/historico-envios.csv
+sistema/fila-hoje.json
+dados/*
+!dados/.gitkeep
+saidas/mensagens-de-hoje.html
+
+# Claude Code local
+.claude/settings.local.json
+
+# Sistema
+Thumbs.db
+.DS_Store

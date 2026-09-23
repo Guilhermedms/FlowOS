@@ -1,0 +1,8 @@
+{
+  "name": "flowos",
+  "displayName": "FlowOS",
+  "version": "1.0.0",
+  "description": "Sistema operacional do pequeno negócio: memória da empresa, retorno automático de clientes, sites sem cara de IA.",
+  "author": { "name": "Guilherme Decker" },
+  "license": "Proprietária — ver LICENSE"
+}
