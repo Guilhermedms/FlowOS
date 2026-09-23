@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/logo.png" alt="FlowOS" width="220"></p>
+
 # FlowOS
 
 Sistema operacional do pequeno negócio, rodando no Claude Code (VS Code) no computador do cliente.
