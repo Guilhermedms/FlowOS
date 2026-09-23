@@ -3,3 +3,15 @@ Thumbs.db
 .vscode/
 *.log
 *.tmp
+
+# Nunca publicar credenciais nem dados de clientes
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+**/segredos/
+**/secrets/
+credentials*.json
+*.xml.flowos
+clientes-reais/
