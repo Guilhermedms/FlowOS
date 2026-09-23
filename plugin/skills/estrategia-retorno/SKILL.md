@@ -20,7 +20,11 @@ Referência de formato: `exemplo.json (nesta pasta da skill)`.
 
 ## Passo 1 — Ciclo do cliente
 
-> "De quanto em quanto tempo um cliente fiel costuma voltar?"
+Se `memoria/empresa.md` já registra de quanto em quanto tempo o cliente volta (a configuração inicial
+pergunta), usar isso como sugestão e só confirmar: "Você me disse que o cliente volta a cada 3 semanas.
+Uso isso como base?". Se não houver, perguntar dizendo o porquê:
+
+> "Pra eu saber quando um cliente está sumido: de quanto em quanto tempo um cliente fiel costuma voltar?"
 
 Se ele não souber, sugerir pelo tipo de negócio (e dizer que é um chute pra calibrar depois):
 

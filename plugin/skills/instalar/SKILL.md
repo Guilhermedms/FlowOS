@@ -34,17 +34,32 @@ Se não houver nada online, seguir direto pra entrevista.
 
 ## 2. Entrevista (só o que a pesquisa não respondeu)
 
-1. "O que você vende, em uma frase, do jeito que falaria pra um vizinho?"
-2. "Quem é teu cliente típico? Pensa num cliente real que você gosta de atender."
-3. "Você toca sozinho ou tem equipe? Quem faz o quê?"
-4. "Me cola uma mensagem real que você mandou pra cliente (WhatsApp, legenda, e-mail). É pra eu
-   aprender teu jeito de escrever."
-5. "Tem alguma forma de escrever que te irrita? (ex: 'caro cliente', muito emoji, gíria)"
-6. "O que mais te toma tempo toda semana?"
-7. "Qual o maior objetivo pros próximos 3 meses?"
-8. "Tem logo e cores definidas? Se tiver, joga o logo em `marca/`."
+**Toda pergunta diz pra que serve**, em meia frase, antes de perguntar. O dono responde melhor
+quando entende o motivo. Uma pergunta por mensagem, sempre com um exemplo de resposta.
 
-Resposta vaga: pedir exemplo uma vez. Depois registrar o que veio e seguir.
+1. **O que vende** — "Pra eu saber do que falar em nome do teu negócio: o que você vende, em uma
+   frase, do jeito que falaria pra um vizinho?" (ex: "corte e barba pra homem, no centro")
+2. **Quem compra** — "Pra eu escrever mensagens, posts e o site falando com a pessoa certa: quem
+   costuma comprar de você?" (ex: "homens de 25 a 45, que trabalham no centro")
+3. **Frequência** — "Pra eu saber quando um cliente está sumido e vale chamar de volta: de quanto
+   em quanto tempo um cliente fiel costuma voltar?" (ex: "a cada 3 semanas"). Se o negócio não
+   tem recompra (ex: evento único), registrar isso e seguir.
+4. **Equipe** — "Pra eu saber a quem atribuir cada coisa: você toca sozinho ou tem equipe? Quem
+   faz o quê?"
+5. **Jeito de escrever** — "Pra eu escrever igual a você, e não como robô: me cola uma mensagem
+   real que você mandou pra cliente (WhatsApp, legenda, e-mail)."
+6. **O que evitar** — "Pra eu não escrever nada que te incomode: tem algum jeito de escrever que
+   te irrita?" (ex: "caro cliente", muito emoji, gíria)
+7. **Tempo** — "Pra eu saber o que tirar das tuas costas primeiro: o que mais te toma tempo toda
+   semana?"
+8. **Objetivo** — "Pra eu priorizar o que te ajuda de verdade: qual o maior objetivo pros
+   próximos 3 meses?" (ex: "encher a agenda de terça e quarta")
+9. **Visual** — "Pra tudo que eu criar ter a cara do teu negócio: tem logo e cores definidas?
+   Se tiver, arrasta o logo pra pasta `marca/`."
+
+Resposta vaga: pedir exemplo uma vez. "Não sei" é resposta válida: registrar `[a confirmar]` e
+seguir, sem insistir. A resposta da 3 vai para `memoria/empresa.md` e é a sugestão inicial de
+ciclo no `flowos:estrategia-retorno`.
 
 ## 3. Preencher
 
