@@ -1,6 +1,6 @@
 {
   "name": "flowos",
-  "owner": { "name": "Guilherme Decker", "url": "https://github.com/Guilhermedms" },
+  "owner": { "name": "Guilherme Decker" },
   "description": "FlowOS — sistema operacional do pequeno negócio para Claude Code.",
   "plugins": [
     {
