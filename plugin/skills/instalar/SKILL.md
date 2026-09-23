@@ -3,7 +3,7 @@ name: instalar
 description: >
   Primeira configuração do FlowOS no negócio do cliente: pesquisa o que já existe (site,
   Instagram, Google), entrevista o dono em poucos minutos e preenche memoria/, marca/ e o final
-  do CLAUDE.md. No fim, encaminha pra base de clientes e estratégia de retorno. Use quando o
+  do CLAUDE.md. No fim, apresenta o que o FlowOS faz (cada recurso se configura numa conversa própria). Use quando o
   usuário disser "/flowos:instalar", "configurar o sistema", "primeiro acesso", ou quando memoria/empresa.md
   estiver vazio.
 ---
@@ -41,25 +41,24 @@ quando entende o motivo. Uma pergunta por mensagem, sempre com um exemplo de res
    frase, do jeito que falaria pra um vizinho?" (ex: "corte e barba pra homem, no centro")
 2. **Quem compra** — "Pra eu escrever mensagens, posts e o site falando com a pessoa certa: quem
    costuma comprar de você?" (ex: "homens de 25 a 45, que trabalham no centro")
-3. **Frequência** — "Pra eu saber quando um cliente está sumido e vale chamar de volta: de quanto
-   em quanto tempo um cliente fiel costuma voltar?" (ex: "a cada 3 semanas"). Se o negócio não
-   tem recompra (ex: evento único), registrar isso e seguir.
-4. **Equipe** — "Pra eu saber a quem atribuir cada coisa: você toca sozinho ou tem equipe? Quem
+3. **Equipe** — "Pra eu saber a quem atribuir cada coisa: você toca sozinho ou tem equipe? Quem
    faz o quê?"
-5. **Jeito de escrever** — "Pra eu escrever igual a você, e não como robô: me cola uma mensagem
+4. **Jeito de escrever** — "Pra eu escrever igual a você, e não como robô: me cola uma mensagem
    real que você mandou pra cliente (WhatsApp, legenda, e-mail)."
-6. **O que evitar** — "Pra eu não escrever nada que te incomode: tem algum jeito de escrever que
+5. **O que evitar** — "Pra eu não escrever nada que te incomode: tem algum jeito de escrever que
    te irrita?" (ex: "caro cliente", muito emoji, gíria)
-7. **Tempo** — "Pra eu saber o que tirar das tuas costas primeiro: o que mais te toma tempo toda
+6. **Tempo** — "Pra eu saber o que tirar das tuas costas primeiro: o que mais te toma tempo toda
    semana?"
-8. **Objetivo** — "Pra eu priorizar o que te ajuda de verdade: qual o maior objetivo pros
+7. **Objetivo** — "Pra eu priorizar o que te ajuda de verdade: qual o maior objetivo pros
    próximos 3 meses?" (ex: "encher a agenda de terça e quarta")
-9. **Visual** — "Pra tudo que eu criar ter a cara do teu negócio: tem logo e cores definidas?
+8. **Visual** — "Pra tudo que eu criar ter a cara do teu negócio: tem logo e cores definidas?
    Se tiver, arrasta o logo pra pasta `marca/`."
 
 Resposta vaga: pedir exemplo uma vez. "Não sei" é resposta válida: registrar `[a confirmar]` e
-seguir, sem insistir. A resposta da 3 vai para `memoria/empresa.md` e é a sugestão inicial de
-ciclo no `flowos:estrategia-retorno`.
+seguir, sem insistir.
+
+Não perguntar sobre frequência de volta, descontos ou mensagens pra clientes aqui: isso é
+decidido numa conversa própria, depois de o dono entender como o retorno de clientes funciona.
 
 ## 3. Preencher
 
@@ -79,15 +78,17 @@ ciclo no `flowos:estrategia-retorno`.
 
 Não inventar nada. Onde faltar, deixar `[a confirmar]`.
 
-## 4. Próximos passos (em sequência, perguntando antes de cada)
+## 4. Apresentar o que vem depois (sem emendar)
 
-1. **Base de clientes** → "Agora o que faz o sistema trabalhar por você: me passa tua lista de
-   clientes, do jeito que estiver." → `/flowos:importar-clientes`
-2. **Estratégia de retorno** → `/flowos:estrategia-retorno`
-3. **Canais de envio** → `/flowos:configurar-envio`
+A configuração inicial termina aqui. **Não** começar outra configuração nesta conversa. Apresentar
+em poucas linhas o que o FlowOS faz e como começar cada coisa — cada uma na sua própria conversa:
 
-Se o dono quiser parar no meio, tudo bem: dizer que da próxima vez que abrir o sistema você
-continua de onde parou.
+> "Agora você pode usar o FlowOS pra:
+> • **Trazer clientes de volta** — eu te aviso todo dia quem sumiu, quem faz aniversário e as datas
+>   especiais, e já deixo a mensagem pronta. Pra configurar, abra uma conversa nova e diga
+>   **"quero configurar o retorno de clientes"** — lá eu te explico como funciona e a gente monta junto.
+> • **Criar teu site** — diga **"quero um site"**.
+> • **Qualquer outra coisa do dia a dia** — é só pedir do teu jeito."
 
 ## 5. Fechamento
 
@@ -96,11 +97,8 @@ continua de onde parou.
 ✓ Jeito de escrever: memoria/preferencias.md
 ✓ Foco: memoria/estrategia.md
 ✓ Marca: marca/guia-de-marca.md
-✓ Clientes: 142 na base          (ou: pendente)
-✓ Retorno de clientes: ativo      (ou: pendente)
 ```
 
-> "Pronto. A partir de amanhã, toda vez que você abrir o sistema eu já te mostro quem chamar e
-> por quê. Pra tudo o resto, é só pedir do teu jeito — site, post, resposta pra cliente, conta."
+Mostrar o resumo acima antes da apresentação do passo 4.
 
 Registrar no diário (`memoria/diario/AAAA-MM.md`): `- DD/MM: FlowOS configurado`.

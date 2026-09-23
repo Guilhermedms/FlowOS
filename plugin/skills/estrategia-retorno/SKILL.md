@@ -5,7 +5,8 @@ description: >
   sumiu (30/60/90 dias), aniversário do cliente, aniversário da empresa, datas comemorativas
   (Dia das Mães, Dia dos Pais, Dia do Cliente, Black Friday…), ofertas, limites e modelos de
   mensagem. Grava em sistema/retorno.json. Use quando o usuário disser "/flowos:estrategia-retorno",
-  "follow-up", "trazer cliente de volta", "mudar o desconto", "adicionar Dia das Mães" etc.
+  "quero configurar o retorno de clientes", "follow-up", "trazer cliente de volta", "mudar o
+  desconto", "adicionar Dia das Mães" etc.
 ---
 
 # /flowos:estrategia-retorno — Estratégia de retorno de clientes
@@ -18,13 +19,30 @@ já existir com regras, perguntar: "Quer revisar tudo ou mudar só uma parte?" e
 
 Referência de formato: `exemplo.json (nesta pasta da skill)`.
 
+## Passo 0 — Explicar como funciona (antes de qualquer pergunta)
+
+O dono precisa entender o que está configurando. Em até 8 linhas, no tom dele:
+
+> "Funciona assim: toda vez que você abrir o FlowOS, eu olho tua lista de clientes e te mostro
+> quem vale chamar hoje — e **por quê**:
+> • **Quem sumiu** — passou do tempo normal de voltar (ex: vinha todo mês e já faz 45 dias)
+> • **Aniversário** do cliente, e o aniversário da tua empresa
+> • **Datas especiais** que você escolher (Dia das Mães, Dia do Cliente, Black Friday…)
+> Eu deixo cada mensagem pronta, no teu jeito de escrever. **Nada sai sem você aprovar.** Você
+> manda pelo WhatsApp (um clique por cliente) ou eu mando por e-mail sozinho.
+>
+> Agora a gente decide junto: quando chamar, o que oferecer e o que dizer. Leva uns 10 minutos.
+> Vamos?"
+
+Se ainda não houver base de clientes (`clientes/clientes.csv` vazio), avisar que dá pra configurar
+agora e importar os clientes no fim.
+
 ## Passo 1 — Ciclo do cliente
 
-Se `memoria/empresa.md` já registra de quanto em quanto tempo o cliente volta (a configuração inicial
-pergunta), usar isso como sugestão e só confirmar: "Você me disse que o cliente volta a cada 3 semanas.
-Uso isso como base?". Se não houver, perguntar dizendo o porquê:
+Explicar e perguntar:
 
-> "Pra eu saber quando um cliente está sumido: de quanto em quanto tempo um cliente fiel costuma voltar?"
+> "Primeiro: pra eu saber quando alguém **sumiu**, preciso saber de quanto em quanto tempo um
+> cliente fiel costuma voltar. No teu negócio, é mais ou menos quanto?"
 
 Se ele não souber, sugerir pelo tipo de negócio (e dizer que é um chute pra calibrar depois):
 
@@ -113,6 +131,7 @@ Se escolheu e-mail e ainda não configurou, emendar com `/flowos:configurar-envi
    (ex: base sem datas de última visita).
 4. Oferecer mandar uma mensagem de teste pro próprio dono.
 5. Registrar em `memoria/estrategia.md` uma linha: "Estratégia de retorno ativa desde dd/mm/aaaa".
+6. Se a base de clientes estiver vazia, oferecer montar agora: `flowos:importar-clientes`.
 
 ## Regras
 

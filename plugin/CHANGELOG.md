@@ -1,8 +1,11 @@
 # Novidades do FlowOS
 
+## 1.1.2
+- O retorno de clientes agora tem sua própria conversa: primeiro eu explico como funciona, depois a gente configura junto. Pra começar, diga "quero configurar o retorno de clientes".
+- A configuração inicial ficou mais curta e não pergunta mais sobre frequência de volta.
+
 ## 1.1.1
 - As perguntas da configuração agora explicam pra que servem, com um exemplo de resposta.
-- A frequência com que seus clientes voltam virou uma pergunta própria e já é usada na estratégia de retorno.
 
 ## 1.1.0
 - Memória sempre em dia: quando você termina algo que muda o negócio (site, clientes, estratégia), eu pergunto se quer guardar na memória.
