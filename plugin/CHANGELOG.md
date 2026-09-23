@@ -1,5 +1,8 @@
 # Novidades do FlowOS
 
+## 1.1.3
+- Na configuração, em vez do objetivo de 3 meses, pergunto o que está segurando teu negócio de crescer — e priorizo o que ataca isso.
+
 ## 1.1.2
 - O retorno de clientes agora tem sua própria conversa: primeiro eu explico como funciona, depois a gente configura junto. Pra começar, diga "quero configurar o retorno de clientes".
 - A configuração inicial ficou mais curta e não pergunta mais sobre frequência de volta.

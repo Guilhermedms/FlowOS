@@ -2,10 +2,10 @@
 
 > O que importa agora. Atualize quando as prioridades mudarem.
 
-## Objetivo dos próximos 3 meses
+## Gargalo atual
+
+## Prioridades (o que ataca o gargalo)
 
 ## O que mais toma tempo (candidatos a automação)
-
-## Prioridades
 
 ## Histórico de decisões

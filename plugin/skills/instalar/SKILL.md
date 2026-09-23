@@ -49,8 +49,8 @@ quando entende o motivo. Uma pergunta por mensagem, sempre com um exemplo de res
    te irrita?" (ex: "caro cliente", muito emoji, gíria)
 6. **Tempo** — "Pra eu saber o que tirar das tuas costas primeiro: o que mais te toma tempo toda
    semana?"
-7. **Objetivo** — "Pra eu priorizar o que te ajuda de verdade: qual o maior objetivo pros
-   próximos 3 meses?" (ex: "encher a agenda de terça e quarta")
+7. **Gargalo** — "Pra eu focar no que destrava teu negócio: o que tá segurando ele de crescer
+   hoje?" (ex: "pouca gente nova chegando", "cliente não volta", "não tenho tempo pra divulgar")
 8. **Visual** — "Pra tudo que eu criar ter a cara do teu negócio: tem logo e cores definidas?
    Se tiver, arrasta o logo pra pasta `marca/`."
 
@@ -69,8 +69,8 @@ decidido numa conversa própria, depois de o dono entender como o retorno de cli
   Registrar cada nota criada em `memoria/INDICE.md`.
 - `memoria/preferencias.md` — tom de voz descrito a partir do exemplo real (citar trechos),
   lista do que evitar, tamanho típico das mensagens, uso de emoji.
-- `memoria/estrategia.md` — objetivo de 3 meses, o que toma tempo (candidato a automação),
-  prioridades.
+- `memoria/estrategia.md` — gargalo atual (nas palavras do dono), o que toma tempo (candidato a
+  automação) e prioridades derivadas do gargalo (o que ataca ele direto).
 - `marca/guia-de-marca.md` — cores (hex), fontes, logo, estilo de foto. Se não houver, deixar
   claro "a definir" e sugerir a partir do site/Instagram.
 - `CLAUDE.md` — trocar `[Nome do negócio]` no título e preencher a seção "## Regras deste negócio" com 3–6 linhas específicas (ex: "Nunca
