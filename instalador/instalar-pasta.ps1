@@ -95,14 +95,40 @@ try {
     }
     Write-Output "OK: pasta do negócio ($Pasta)"
 
-    # plugin (só pra esta pasta)
+    # plugin no escopo do USUÁRIO: o painel do Claude no VS Code não mostra o diálogo de confiança e,
+    # sem confiança, ignora o .claude/settings.json da pasta (onde um plugin de projeto seria ativado).
+    # Fora de pastas FlowOS o plugin fica inerte: os gatilhos só agem onde existe .claude/flowos.json.
     Push-Location $Pasta
     try {
         [void](Rodar "`"$claude`" plugin marketplace add $Repo")
-        $codigo = Rodar "`"$claude`" plugin install flowos@flowos --scope project" -Mostrar
-        if ($codigo -ne 0) { throw 'Não consegui instalar o plugin FlowOS (veja a mensagem acima).' }
+        $codigo = Rodar "`"$claude`" plugin install flowos@flowos --scope user" -Mostrar
+        if ($codigo -ne 0) {
+            $lista = cmd /c "`"$claude`" plugin list 2>&1" | Out-String
+            if ($lista -notmatch '(?s)flowos@flowos.*?Scope:\s*user') { throw 'Não consegui instalar o plugin FlowOS (veja a mensagem acima).' }
+        }
     } finally { Pop-Location }
     Write-Output 'OK: plugin FlowOS instalado'
+
+    # permissões do FlowOS nas configurações do usuário (as da pasta só valem com confiança, que o VS Code não pede)
+    $configDir = $env:CLAUDE_CONFIG_DIR; if (-not $configDir) { $configDir = Join-Path $env:USERPROFILE '.claude' }
+    $userSettings = Join-Path $configDir 'settings.json'
+    New-Item -ItemType Directory -Force (Split-Path $userSettings) | Out-Null
+    if (Test-Path $userSettings) {
+        Copy-Item $userSettings "$userSettings.flowos-backup" -Force
+        $u = [IO.File]::ReadAllText($userSettings, $Utf8) | ConvertFrom-Json
+    } else { $u = New-Object PSObject }
+    if (-not $u.PSObject.Properties['permissions']) { $u | Add-Member permissions (New-Object PSObject) }
+    foreach ($tipo in @('allow', 'deny')) {
+        $atuais = @(); if ($u.permissions.PSObject.Properties[$tipo]) { $atuais = @($u.permissions.$tipo) }
+        $novas = if ($tipo -eq 'allow') {
+            @('Bash(flowos-retorno:*)', 'PowerShell(flowos-retorno:*)', 'Edit(./memoria/**)', 'Edit(./marca/**)',
+              'Edit(./clientes/**)', 'Edit(./sites/**)', 'Edit(./conteudo/**)', 'Edit(./saidas/**)',
+              'Edit(./sistema/retorno.json)', 'Edit(./sistema/fila-hoje.json)')
+        } else { @('Read(./sistema/segredos/**)', 'Edit(./sistema/segredos/**)') }
+        $u.permissions | Add-Member -Force $tipo @($atuais + @($novas | Where-Object { $atuais -notcontains $_ }))
+    }
+    Gravar-Json $u $userSettings
+    Write-Output 'OK: permissões do FlowOS'
 
     # atualização automática (marketplaces de terceiros vêm com ela desligada) — precisa de administrador
     if ($SemAtualizacaoAutomatica) {
