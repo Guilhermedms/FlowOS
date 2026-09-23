@@ -20,9 +20,15 @@ function Recarregar-Path {
     $env:Path = [Environment]::GetEnvironmentVariable('Path', 'Machine') + ';' +
                 [Environment]::GetEnvironmentVariable('Path', 'User') + ";$env:USERPROFILE\.local\bin"
 }
+# Programas externos rodam via cmd: no PowerShell 5.1, qualquer texto na saída de erro (ex: aviso do Node)
+# vira erro fatal com ErrorActionPreference=Stop. Devolve o código de saída.
+function Rodar([string]$linha, [switch]$Mostrar) {
+    if ($Mostrar) { cmd /c "$linha 2>&1" | Out-Host } else { cmd /c "$linha >nul 2>&1" }
+    return $LASTEXITCODE
+}
 function Instalar-Winget([string]$id, [string]$nome) {
     if (-not (Tem 'winget')) { throw "Não encontrei o winget (Instalador de Aplicativos). Instale o $nome manualmente e rode este instalador de novo." }
-    winget install --id $id -e --silent --accept-package-agreements --accept-source-agreements | Out-Null
+    [void](Rodar "winget install --id $id -e --silent --accept-package-agreements --accept-source-agreements")
     Recarregar-Path
 }
 function Slug([string]$s) {
@@ -64,7 +70,7 @@ try {
 
     # 4. Extensão do Claude no VS Code
     Passo 4 'Claude no VS Code'
-    code --install-extension anthropic.claude-code --force 2>$null | Out-Null
+    [void](Rodar 'code --install-extension anthropic.claude-code --force')
     Ok 'extensão pronta'
 
     # 5. Pasta do negócio
@@ -99,9 +105,9 @@ try {
     Passo 6 'FlowOS'
     Push-Location $pasta
     try {
-        claude plugin marketplace add $Marketplace 2>&1 | Out-Null
-        claude plugin install $Plugin --scope project
-        if ($LASTEXITCODE -ne 0) { throw 'Não consegui instalar o plugin FlowOS (veja a mensagem acima).' }
+        [void](Rodar "claude plugin marketplace add $Marketplace")
+        $codigo = Rodar "claude plugin install $Plugin --scope project" -Mostrar
+        if ($codigo -ne 0) { throw 'Não consegui instalar o plugin FlowOS (veja a mensagem acima).' }
     } finally { Pop-Location }
     Ok 'plugin instalado'
 
@@ -135,7 +141,7 @@ if (-not `$cfg.PSObject.Properties['extraKnownMarketplaces']) { `$cfg | Add-Memb
     Write-Host '   3. Se perguntar se confia na pasta, clique em "Sim, confio"'
     Write-Host '   4. Escreva "oi" — o FlowOS começa a configuração do seu negócio'
     Write-Host ''
-    code $pasta
+    [void](Rodar "code `"$pasta`"")
 }
 catch {
     Write-Host ''
