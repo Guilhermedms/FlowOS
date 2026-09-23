@@ -1,0 +1,7 @@
+# Quebras de linha fixas por tipo — o Git do cliente (Windows) não pode converter o script bash
+* text=auto eol=lf
+*.cmd text eol=crlf
+*.bat text eol=crlf
+plugin/bin/flowos-retorno text eol=lf
+*.png binary
+*.jpg binary
