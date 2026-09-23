@@ -6,14 +6,29 @@ da assinatura do Claude.
 
 ## Instalar (Windows)
 
-Abra o PowerShell (Menu Iniciar → "PowerShell") e cole:
+### Pelo Claude no VS Code (quem já tem VS Code + Claude)
+
+1. Crie uma pasta pro negócio e abra no VS Code (Arquivo → Abrir Pasta).
+2. Abra o Claude, aceite **confiar na pasta** e cole:
+
+   ```
+   Instala o FlowOS nesta pasta seguindo https://raw.githubusercontent.com/Guilhermedms/FlowOS/main/INSTALAR.md
+   ```
+
+3. Quando ele terminar, clique no **+** (nova conversa) e diga **oi**.
+
+### Pelo PowerShell (computador sem nada instalado)
+
+Menu Iniciar → "PowerShell" → cole:
 
 ```powershell
 irm https://raw.githubusercontent.com/Guilhermedms/FlowOS/main/instalador/instalar.ps1 | iex
 ```
 
-O instalador prepara Git, VS Code, Claude Code, cria a pasta do negócio, instala o FlowOS e liga
-a atualização automática. Depois é só abrir o Claude no VS Code e dizer "oi".
+Instala Git, VS Code e Claude Code se faltarem, cria a pasta do negócio, instala o FlowOS e
+abre o VS Code. Depois: entrar na conta Claude, confiar na pasta e dizer **oi**.
+
+Os dois caminhos usam o mesmo `instalador/instalar-pasta.ps1` (pasta + plugin + atualização automática).
 
 ## Como está organizado
 
@@ -29,7 +44,9 @@ plugin/                            o FlowOS em si — vai pro computador do clie
   regras/regras.md                   comportamento do sistema (substitui o CLAUDE.md genérico)
   skills/                            os comandos /flowos:*
   modelo/                            estrutura da pasta do negócio (criada/completada na abertura)
-instalador/instalar.ps1            instalador de 1 linha
+instalador/instalar.ps1            instalador de 1 linha (PC zerado)
+instalador/instalar-pasta.ps1      prepara a pasta + instala o plugin (usado pelos dois caminhos)
+INSTALAR.md                        instruções pro Claude instalar pelo chat
 ```
 
 A pasta de cada negócio guarda **só dados** (memória, clientes, marca, sites). Atualizar o
