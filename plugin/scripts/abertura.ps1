@@ -56,7 +56,7 @@ try {
 
 # ---- 4. regras
 try { Write-Output ([IO.File]::ReadAllText((Join-Path $Plugin 'regras\regras.md'), $Utf8)) }
-catch { Write-Output '[FlowOS] Não consegui ler as regras do sistema — o plugin pode estar corrompido. Sugira /flowos:atualizar.' }
+catch { Write-Output '[FlowOS] Não consegui ler as regras do sistema — o plugin pode estar corrompido. Sugira /flowos:atualizar-sistema.' }
 Write-Output ''
 
 # ---- 5. retorno de clientes

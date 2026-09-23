@@ -1,12 +1,12 @@
 ---
-name: atualizar
+name: atualizar-sistema
 description: >
   Busca e instala a versão mais nova do FlowOS agora, sem esperar a atualização automática. Use
-  quando o usuário disser "atualiza o FlowOS", "tem versão nova?", "/flowos:atualizar", ou quando
+  quando o usuário disser "atualiza o FlowOS", "tem versão nova?", "/flowos:atualizar-sistema", ou quando
   quem instalou avisar que saiu uma atualização.
 ---
 
-# /flowos:atualizar
+# /flowos:atualizar-sistema
 
 1. Rodar, nesta ordem:
    - `claude plugin marketplace update flowos`

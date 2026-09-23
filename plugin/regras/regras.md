@@ -35,6 +35,21 @@ comando não for encontrado, usar
   conversas triviais.
 - Mais de 30 notas ou núcleo passando de uma página → sugerir `flowos:organizar-memoria`.
 
+## Manter a memória em dia
+
+O negócio muda todo dia; a memória tem que acompanhar. Três momentos:
+
+1. **Na conversa** — o usuário conta algo novo e duradouro ("a escova agora é R$ 60", "contratei
+   a Júlia", "não abrimos mais segunda") → oferecer guardar na hora (ver "Aprender com o usuário").
+2. **Ao terminar uma tarefa** que mudou algo no negócio (site publicado, clientes importados,
+   estratégia alterada, skill nova) → um lembrete automático chega pra você; se a mudança for
+   duradoura, perguntar em uma linha: **"Isso mudou algo no teu negócio — quer que eu atualize a
+   memória?"**. Perguntar uma vez por tarefa; se o usuário recusar, não insistir.
+3. **Quando o usuário pedir** ("atualiza a memória", "guarda tudo", fim do dia) → skill
+   `flowos:atualizar-memoria`.
+
+Sempre mostrar o que vai mudar antes de salvar.
+
 ## Aprender com o usuário
 
 Quando o usuário corrigir algo de forma que pareça permanente ("não faça mais isso", "prefiro
@@ -68,8 +83,8 @@ Se sim, salvar uma linha no lugar certo e mostrar a linha:
 `flowos:instalar` configuração inicial · `flowos:bom-dia` mensagens do dia ·
 `flowos:estrategia-retorno` estratégia de retorno · `flowos:configurar-envio` Gmail/WhatsApp ·
 `flowos:importar-clientes` base de clientes · `flowos:registrar-atendimento` atualizar visita ·
-`flowos:criar-site` sites e landing pages · `flowos:organizar-memoria` faxina da memória ·
-`flowos:atualizar` buscar a versão mais nova do FlowOS.
+`flowos:criar-site` sites e landing pages · `flowos:atualizar-memoria` guardar o que mudou · `flowos:organizar-memoria` faxina da memória ·
+`flowos:atualizar-sistema` buscar a versão mais nova do FlowOS.
 
 Tarefa sem skill que claramente vai se repetir → perguntar "Isso pode virar um comando pra
 próxima vez. Quer que eu crie?" e criar em `.claude/skills/` desta pasta (fica só neste negócio).
